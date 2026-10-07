@@ -53,7 +53,7 @@ export function createKit({ stage, statusEl, piece, store, onWin, now }) {
     every(ms, fn) { const t = setInterval(fn, ms); cleanups.push(() => clearInterval(t)); return t; },
     loop(fn) {
       let id, last = performance.now(), stopped = false;
-      const tick = (t) => { if (stopped) return; const dt = Math.min(64, t - last); last = t; if (fn(dt, t) === false) return; id = requestAnimationFrame(tick); };
+      const tick = (t) => { if (stopped) return; const dt = Math.max(0, Math.min(64, t - last)); last = t; // rAF can hand back a slightly earlier timestamp first if (fn(dt, t) === false) return; id = requestAnimationFrame(tick); };
       id = requestAnimationFrame(tick);
       const stop = () => { stopped = true; cancelAnimationFrame(id); };
       cleanups.push(stop);
