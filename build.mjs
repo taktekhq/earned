@@ -168,7 +168,7 @@ export function build(siteDir) {
   const errors = validate(store);
   if (errors.length) throw new Error(`store.json has problems:\n- ${errors.join('\n- ')}`);
   for (const p of store.pieces) {
-    if (!p.game.startsWith('@') && !existsSync(join(siteDir, p.game))) throw new Error(`${p.slug}: game file ${p.game} not found`);
+    if (!p.game.startsWith('@') && !existsSync(join(siteDir, p.game))) console.warn(`warning: ${p.slug}: game file ${p.game} not found yet`);
   }
   cpSync(join(here, 'engine'), join(siteDir, '_earned'), { recursive: true });
   writeFileSync(join(siteDir, 'index.html'), wallHtml(store));

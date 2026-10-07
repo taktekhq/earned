@@ -98,7 +98,7 @@ tools, and that's fine: the game is the fun, not a lock.
 `store.json` files into `worker/src/catalog.js` at deploy time.
 
 ```sh
-node worker/make-catalog.mjs ../my-shop/store.json        # any number of stores
+node worker/make-catalog.mjs ../my-shop/store.json        # any number of stores; --out FILE to write elsewhere
 cp worker/wrangler.toml.example worker/wrangler.toml       # set ALLOWED_ORIGINS etc.
 cd worker
 npx wrangler secret put STRIPE_SECRET_KEY
