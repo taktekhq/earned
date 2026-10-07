@@ -171,6 +171,8 @@ export function build(siteDir) {
     if (!p.game.startsWith('@') && !existsSync(join(siteDir, p.game))) console.warn(`warning: ${p.slug}: game file ${p.game} not found yet`);
   }
   cpSync(join(here, 'engine'), join(siteDir, '_earned'), { recursive: true });
+  // GitHub Pages runs Jekyll, which drops folders and files starting with "_" (like _earned/).
+  writeFileSync(join(siteDir, '.nojekyll'), '');
   writeFileSync(join(siteDir, 'index.html'), wallHtml(store));
   store.pieces.forEach((p, i) => {
     mkdirSync(join(siteDir, p.slug), { recursive: true });

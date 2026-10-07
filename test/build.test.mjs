@@ -15,6 +15,7 @@ test('example store builds a wall and one page per piece', () => {
   assert.match(wall, /data-card="patience-mug"/);
   assert.ok(existsSync(join(dir, 'lucky-tee', 'index.html')));
   assert.ok(existsSync(join(dir, '_earned', 'games', 'still.js')));
+  assert.ok(existsSync(join(dir, '.nojekyll')));
   const page = readFileSync(join(dir, 'lucky-tee', 'index.html'), 'utf8');
   assert.match(page, /"@type":"Product"/);
   assert.match(page, /"lowPrice":"32.00","highPrice":"34.00"/);
