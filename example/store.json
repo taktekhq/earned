@@ -1,0 +1,24 @@
+{
+  "id": "example",
+  "name": "Example shop",
+  "headline": "Nothing here is for sale. Yet.",
+  "intro": "Win a piece and its Buy button appears.",
+  "url": "https://example.com/shop/",
+  "currency": "USD",
+  "checkout": null,
+  "printfulStoreId": 1,
+  "debug": true,
+  "pieces": [
+    { "slug": "patience-mug", "name": "Patience mug", "line": "wait for it.", "challenge": "Keep still for ten seconds.",
+      "game": "@still", "gameOptions": { "seconds": 10 }, "price": 2400,
+      "images": [{ "src": "img/mug.svg", "alt": "A white mug with a green dot" }],
+      "variants": [{ "id": 101, "options": {} }] },
+    { "slug": "early-mug", "name": "Early mug", "challenge": "Opens 5 to 8 in the morning, your time.",
+      "game": "@window", "gameOptions": { "from": "05:00", "to": "08:00", "closed": "Come back before eight." }, "price": 2400,
+      "images": [{ "src": "img/mug.svg", "alt": "A white mug" }], "variants": [{ "id": 102, "options": {} }] },
+    { "slug": "lucky-tee", "name": "Lucky tee", "challenge": "Call three coin flips in a row.", "game": "games/coin.js",
+      "options": [{ "name": "size", "values": ["S", "M", "L"] }], "price": 3200,
+      "images": [{ "src": "img/mug.svg", "alt": "" }],
+      "variants": [{ "id": 201, "options": { "size": "S" } }, { "id": 202, "options": { "size": "M" } }, { "id": 203, "options": { "size": "L" }, "price": 3400 }] }
+  ]
+}

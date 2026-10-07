@@ -1,0 +1,8 @@
+{
+  "name": "earned",
+  "version": "0.1.0",
+  "description": "A shop where every product has to be won before it can be bought. Static pages, Stripe checkout, Printful fulfilment.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": { "test": "node --test test/*.test.mjs", "build": "node build.mjs" }
+}

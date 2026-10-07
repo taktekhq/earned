@@ -1,0 +1,12 @@
+name = "earned-checkout"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+ALLOWED_ORIGINS = "https://example.com"
+CONFIRM_ORDERS = "false"   # "true" sends paid orders straight to production
+SHIP_COUNTRIES = "US,CA,GB,DE,FR,AU"
+# NOTIFY_URL = "https://hooks.slack.com/services/..."   # optional
+
+# Secrets (wrangler secret put NAME):
+#   STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, PRINTFUL_TOKEN
